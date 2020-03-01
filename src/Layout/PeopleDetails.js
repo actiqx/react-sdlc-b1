@@ -28,6 +28,10 @@ class PeopleDetails extends Component {
                 alert('REcord Updated SuccessFully')
             })
     }
+
+    componentDidUpdate(prevProps,prevState){
+        console.log(prevProps,prevState,this.state,this.props);
+    }
     render() {
         const peopleDetails = this.state.peopleDetails;
         let entry;
