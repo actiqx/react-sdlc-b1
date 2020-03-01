@@ -1,10 +1,15 @@
 import React from 'react';
 
 const PeopleList = (props) => {
-    const {plist}= props;
+
+    const navigateTo =(id)=>{
+        console.log(id)
+        props.history.push(`/peopledetails/${id+1}`)
+    }
+
     return (
         <div className="justify-content-center">
-             <table class="table">
+             <table className="table">
              <thead>
     <tr >
       <th scope="col">#</th>
@@ -28,7 +33,7 @@ const PeopleList = (props) => {
                         <td >{ppl.height}</td>
                         <td >{ppl.mass}</td>
                         <td >{ppl.hair_color}</td>
-                        <td><span className="btn btn-link">
+                        <td><span className="btn btn-link" onClick={()=>navigateTo(key)}>
                             edit
                         </span> <span className="btn btn-link">delete</span></td>
                         </tr>

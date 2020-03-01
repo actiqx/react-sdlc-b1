@@ -34,12 +34,10 @@ class App extends Component {
   <div>
       <Switch>
          
-          <Route path="/peopledetails/:name" component={PeopleDetails}>
-            {/* <PeopleDetails {...this.props}></PeopleDetails> */}
+          <Route path="/peopledetails/:id" component={PeopleDetails}>
           </Route>
           <Route path="/peopledetails" component={PeopleDetails}/>
-          <Route path="/people">
-          <PeopleList plist={this.state.people}></PeopleList>
+          <Route path="/people" render={props=>(<PeopleList {...props} plist={this.state.people}></PeopleList>)}>
           </Route>
           <Redirect to="/people" from="/"/>
         </Switch>
